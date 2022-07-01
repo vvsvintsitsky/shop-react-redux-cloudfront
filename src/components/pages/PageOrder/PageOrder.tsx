@@ -21,7 +21,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import TableContainer from "@material-ui/core/TableContainer";
 
-const Form = (props: FormikProps<FormikValues>) => {
+function Form(props: FormikProps<FormikValues>) {
   const {
     values,
     // touched,
@@ -156,6 +156,7 @@ export default function PageOrder() {
         enableReinitialize
         onSubmit={onChangeStatus}
       >
+        {/* @ts-ignore */}
         {(props: FormikProps<FormikValues>) => <Form {...props} />}
       </Formik>
       <Typography variant="h6">

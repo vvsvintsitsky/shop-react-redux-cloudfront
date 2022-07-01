@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PaperLayout:React.FC = ({children}) =>  {
+function PaperLayout({children}: React.PropsWithChildren<{}>)  {
   const classes = useStyles();
 
   return (

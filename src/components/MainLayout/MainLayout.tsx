@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MainLayout: React.FC = ({children}) => {
+function MainLayout({children}: React.PropsWithChildren<{}>) {
   const classes = useStyles();
 
   return (
