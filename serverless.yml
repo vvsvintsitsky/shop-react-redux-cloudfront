@@ -1,0 +1,18 @@
+service: aws-node-project
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-finch
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+custom:
+  client:
+    bucketName: uss-svinorez-bucket
+    distributionFolder: build
+    indexDocument: index.html
+    errorDocument: index.html
+    region: eu-west-1

@@ -6,7 +6,9 @@
     "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serverless:deploy": "serverless client deploy",
+    "serverless:remove": "serverless client remove"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
