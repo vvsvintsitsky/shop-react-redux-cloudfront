@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import 'index.css';
 import App from 'components/App/App';
 import {store} from 'store/store';
@@ -21,14 +21,15 @@ axios.interceptors.response.use(
   }
 );
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root')!)
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <CssBaseline/>
       <App/>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
