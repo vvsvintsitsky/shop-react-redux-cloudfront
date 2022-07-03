@@ -1,3 +1,7 @@
+[Link to S3 Bucket](http://product-shop-spa-bucket.s3-website-us-east-1.amazonaws.com/)
+
+[Hosted app](https://d3o0w4t7mppgm5.cloudfront.net/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
