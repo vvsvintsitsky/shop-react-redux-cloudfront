@@ -13,9 +13,9 @@
     "client:build:deploy:nc": "yarn build && yarn client:deploy:nc",
     "cloudfront:setup": "serverless deploy",
     "cloudfront:domainInfo": "serverless domainInfo",
-    "cloudfront:invalidateCache": "",
-    "cloudfront:build:deploy": "yarn client:build:deploy",
-    "cloudfront:build:deploy:nc": "yarn client:build:deploy:nc",
+    "cloudfront:invalidateCache": "serverless invalidateCloudFrontCache",
+    "cloudfront:build:deploy": "yarn client:build:deploy && yarn cloudfront:invalidateCache",
+    "cloudfront:build:deploy:nc": "yarn client:build:deploy:nc && yarn cloudfront:invalidateCache",
     "cloudfront:update:build:deploy": "yarn cloudfront:setup && yarn cloudfront:build:deploy",
     "cloudfront:update:build:deploy:nc": "yarn cloudfront:setup && yarn cloudfront:build:deploy:nc"
   },
@@ -45,7 +45,7 @@
     "react-scripts": "5.0.1",
     "serverless": "^3.19.0",
     "serverless-finch": "^4.0.0",
-    "serverless-single-page-app-plugin": "https://github.com/vvsvintsitsky/serverless-single-page-app-plugin#d16854b268d3c77d6f6269629c21d4b4a315b378",
+    "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin",
     "typescript": "^4.4.2",
     "yup": "^0.29.1"
   },
