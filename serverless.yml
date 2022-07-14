@@ -1,4 +1,4 @@
-service: product-shop-spa-service
+service: product-shop-spa-react-vvs-service
 
 frameworkVersion: '3'
 
@@ -14,7 +14,7 @@ plugins:
 custom:
   ## Serverless-finch configuration
   client:
-    bucketName: product-shop-spa-bucket
+    bucketName: product-shop-spa-react-vvs
     distributionFolder: build
     indexDocument: index.html
     manageResources: false
