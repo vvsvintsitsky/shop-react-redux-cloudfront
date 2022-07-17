@@ -1,11 +1,10 @@
-service: product-shop-spa-react-vvs-service
+service: product-shop-spa-vvs-service
 
 frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs14.x
-  region: eu-west-1
 
 plugins:
   - serverless-finch
@@ -14,7 +13,7 @@ plugins:
 custom:
   ## Serverless-finch configuration
   client:
-    bucketName: product-shop-spa-react-vvs
+    bucketName: product-shop-spa-vvs
     distributionFolder: build
     indexDocument: index.html
     manageResources: false
