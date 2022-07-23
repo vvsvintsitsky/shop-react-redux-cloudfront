@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+
+import { v4 as uuid } from 'uuid';
+
 import {Product, ProductSchema} from "models/Product";
 import {Formik, Field, FormikProps, FormikValues} from 'formik';
 import {TextField} from 'formik-material-ui';
@@ -106,11 +109,16 @@ export default function PageProductForm() {
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const onSubmit = (values: FormikValues) => {
+  const onSubmit = async (values: FormikValues) => {
     const formattedValues = ProductSchema.cast(values);
-    const productToSave = id ? {...ProductSchema.cast(formattedValues), id} : formattedValues;
-    axios.put(`${API_PATHS.bff}/product`, productToSave)
-      .then(() => history.push('/admin/products'));
+
+    if (!id) {
+      await axios.post(`${API_PATHS.bff}/products`, { ...formattedValues, id: uuid() })
+    } else {
+      await axios.put(`${API_PATHS.bff}/products`, {...ProductSchema.cast(formattedValues), id})
+    }
+
+    history.push('/admin/products');
   };
 
   useEffect(() => {
@@ -118,7 +126,7 @@ export default function PageProductForm() {
       setIsLoading(false);
       return;
     }
-    axios.get(`${API_PATHS.bff}/product/${id}`)
+    axios.get(`${API_PATHS.bff}/products/${id}`)
       .then(res => {
         setProduct(res.data);
         setIsLoading(false);

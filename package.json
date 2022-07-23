@@ -47,6 +47,7 @@
     "serverless-finch": "^4.0.0",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin",
     "typescript": "^4.4.2",
+    "uuid": "^8.3.2",
     "yup": "^0.29.1"
   },
   "eslintConfig": {
@@ -66,5 +67,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.4"
   }
 }
