@@ -15,7 +15,7 @@ export default function Cart() {
         `${API_PATHS.cart}/profile/cart`,
         {
           headers: {
-            Authorization: `Basic ${localStorage.getItem('authorization_token')}`
+            Authorization: `Bearer ${localStorage.getItem('authorization_token')}`
           }
         }
     ).then(({ data: { data: { cart } } }) => {
